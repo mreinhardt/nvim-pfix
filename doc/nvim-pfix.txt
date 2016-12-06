@@ -1,0 +1,60 @@
+*nvim-pfix.txt* Plugin for project-wide search and replace
+
+                  Project Search Replace Plugin
+
+==============================================================================
+
+CONTENTS                                                 *nvim-pfix-contents*
+
+    1. Introduction ..................................... |nvim-pfix-intro|
+    2. Installation ................................... |nvim-pfix-install|
+    3. Usage ............................................ |nvim-pfix-usage|
+    4. Options ........................................ |nvim-pfix-options|
+
+Author:    Michael Reinhardt
+License:   MIT
+
+==============================================================================
+
+INTRODUCTION                                                *nvim-pfix-intro*
+
+Plugin for project-wide search and replace.
+
+Based on the vim plugin `greplace` by Yegappan Lakshmanan
+http://www.vim.org/scripts/script.php?script_id=1813
+
+==============================================================================
+
+INSTALLATION                                              *nvim-pfix-install*
+
+Use a plugin manager like `pathogen`, `vundle` or `vim-plug` to install this
+repository to your plugins folder.
+
+==============================================================================
+
+USAGE                                                       *nvim-pfix-usage*
+
+The following commands are provided by this plugin:
+
+:Pfind           Search for a given pattern and display matches in the
+                 replace buffer.
+:Pfix            Use buffer modifications to replace the given lines
+                 in the corresponding files.
+
+==============================================================================
+
+OPTIONS                                                   *nvim-pfix-options*
+
+To customize the command used for ":Pfind" you can modify the following
+options in your init.vim, for example to use "ag" instead of "grep":
+
+    let g:nvim_pfix_pfind='ag'
+    let g:nvim_pfix_pfind_opts='--recurse --hidden --numbers --noheading'
+
+The replace buffer height defaults to 10 lines, but this can be modified
+with the following option:
+
+    let g:nvim_pfix_buffer_height=20
+
+==============================================================================
+
